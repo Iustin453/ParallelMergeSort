@@ -52,7 +52,7 @@ void parallelMergeSort(std::vector<int>& arr, int left, int right, int depth = 0
 }
 
 int main() {
-    std::vector<int> arr = {12, 11, 13, 5, 6, 7, 99, 101, 16, 77, 287, 777};
+    std::vector<int> arr = {50, 40, 30, 20, 10, 5, 15, 25, 35, 45};
     int arr_size = arr.size();
 
     std::cout << "Given array is \n";
@@ -69,3 +69,4 @@ int main() {
 
     return 0;
 }
+

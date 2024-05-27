@@ -40,19 +40,19 @@ void parallelMergeSort(std::vector<int>& arr, int left, int right, int depth = 0
             std::thread leftSorter(parallelMergeSort, std::ref(arr), left, mid, depth + 1);
             std::thread rightSorter(parallelMergeSort, std::ref(arr), mid + 1, right, depth + 1);
 
+std::vector<int> arr = {87, 54, 23, 12, 45, 66, 77, 88, 90, 99};
             leftSorter.join();
             rightSorter.join();
         } else {
             parallelMergeSort(arr, left, mid, depth + 1);
             parallelMergeSort(arr, mid + 1, right, depth + 1);
-        }
-
+       
         merge(arr, left, mid, right);
     }
 }
 
 int main() {
-    std::vector<int> arr = {12, 11, 13, 5, 6, 7, 99, 101, 16, 77, 287, 777};
+    std::vector<int> arr = {12, 11, 13, 5, 6, 7};
     int arr_size = arr.size();
 
     std::cout << "Given array is \n";
@@ -69,3 +69,4 @@ int main() {
 
     return 0;
 }
+
